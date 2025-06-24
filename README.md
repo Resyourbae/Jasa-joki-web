@@ -156,7 +156,7 @@ MIDTRANS_IS_PRODUCTION=false
 
 ## 👥 Tim Pengembang
 
-- **Developer**: [Resyourbae](https://github.com/Resyourbae)
+- **Developer**: [Resyourbae](https://github.com/Resyourbae) , [faturahaman](https://github.com/faturahaman) , [firyal](https://github.com/IhateCode-Man)
 - **Status**: Dalam tahap development
 
 ## 📋 Layanan yang Tersedia

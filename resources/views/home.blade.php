@@ -149,6 +149,21 @@
             </div>
         </section>
 
+         <!-- Hero Section -->
+    <section id="hero"
+        class="min-h-screen py-16 pt-24 bg-gradient-to-b from-white to-gray-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
+        <div class="container px-4 mx-auto">
+            <h1 class="mb-4 text-4xl font-extrabold text-center text-blue-800 drop-shadow-lg dark:text-blue-200">Tentang Website Kami</h1>
+            <p class="max-w-2xl mx-auto mb-12 text-lg text-center text-gray-700 dark:text-gray-200">
+                Website ini adalah platform yang menyediakan jasa pembuatan website profesional. Kami berkomitmen untuk
+                memberikan solusi terbaik untuk kebutuhan online Anda.
+            </p>
+
+            <!-- Tempat menampilkan card developer -->
+            <div id="developers" class="flex flex-wrap justify-center gap-10"></div>
+        </div>
+    </section>
+
         <!-- Kontak -->
         <section class="mb-10">
             <h2 class="text-2xl font-semibold mb-5 flex items-center justify-center gap-2 dark:text-yellow-300">
@@ -257,6 +272,49 @@
             initTheme();
             // Pastikan icon sesuai setelah inisialisasi
             updateIcons(html.classList.contains('dark'));
+
+             // Tampilkan data developer dari array
+            const developers = [
+                {
+                    name: "Resya Anggara",
+                    role: "Front End Developer",
+                    image: "{{ asset('img/resya.jpeg') }}",
+                    color: "from-blue-400 to-blue-200",
+                    textColor: "text-blue-700 dark:text-blue-300"
+                },
+                {
+                    name: "Firyal",
+                    role: "Front End Developer",
+                    image: "{{ asset('img/firyal.jpg') }}",
+                    color: "from-pink-400 to-pink-200",
+                    textColor: "text-pink-700 dark:text-pink-300"
+                },
+                {
+                    name: "Riffa",
+                    role: "Full Stack Developer",
+                    image: "{{ asset('img/riffa.jpg') }}",
+                    color: "from-green-400 to-green-200",
+                    textColor: "text-green-700 dark:text-green-300"
+                },
+            ];
+
+            const container = document.getElementById('developers');
+            developers.forEach(dev => {
+                const card = document.createElement('div');
+                card.className = `
+                    w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 
+                    p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100
+                `;
+                card.innerHTML = `
+                    <div class="bg-gradient-to-tr ${dev.color} p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
+                        <img src="${dev.image}" alt="${dev.name}"
+                            class="object-cover w-48 transition-transform duration-300 border-4 border-white rounded-lg shadow-lg h-80 group-hover:scale-110">
+                    </div>
+                    <h2 class="text-xl font-semibold text-center ${dev.textColor}">${dev.name}</h2>
+                    <p class="text-center text-gray-500 dark:text-gray-400">${dev.role}</p>
+                `;
+                container.appendChild(card);
+            });
         });
 
         themeToggle.addEventListener('click', () => {

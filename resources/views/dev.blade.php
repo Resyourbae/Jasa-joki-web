@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8" />
@@ -13,12 +13,12 @@
 <body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-[#1b1b18] min-h-screen flex flex-col 
              dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
 
-    <!-- Navbar Fixed -->
+    <!-- Navbar -->
     <nav id="main-navbar"
-        class="top-0 right-0 p-4 flex items-center justify-between bg-white shadow-lg fixed w-full z-50 rounded-b-lg transition-colors duration-300 dark:bg-gray-900 dark:shadow-gray-800">
-        <div class="text-lg font-bold text-blue-700 tracking-wide select-none dark:text-blue-200"><a href="/">AyserNii Joki</a></div>
-        <div class="flex gap-4 items-center">
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-blue-100 transition dark:hover:bg-gray-800"
+        class="fixed top-0 right-0 z-50 flex items-center justify-between w-full p-4 transition-colors duration-300 bg-white rounded-b-lg shadow-lg dark:bg-gray-900 dark:shadow-gray-800">
+        <div class="text-lg font-bold tracking-wide text-blue-700 select-none dark:text-blue-200"><a href="/">AyserNii Joki</a></div>
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 transition rounded-full hover:bg-blue-100 dark:hover:bg-gray-800"
                 aria-label="Toggle Theme" type="button">
                 <svg id="icon-sun" class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24">
@@ -40,57 +40,22 @@
 
     <!-- Hero Section -->
     <section id="hero"
-        class="pt-24 bg-gradient-to-b from-white to-gray-100 min-h-screen py-16 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-extrabold text-center mb-4 text-blue-800 drop-shadow-lg dark:text-blue-200">Tentang
-                Website Kami</h1>
-            <p class="text-gray-700 text-center mb-12 max-w-2xl mx-auto text-lg dark:text-gray-200">
+        class="min-h-screen py-16 pt-24 bg-gradient-to-b from-white to-gray-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
+        <div class="container px-4 mx-auto">
+            <h1 class="mb-4 text-4xl font-extrabold text-center text-blue-800 drop-shadow-lg dark:text-blue-200">Tentang Website Kami</h1>
+            <p class="max-w-2xl mx-auto mb-12 text-lg text-center text-gray-700 dark:text-gray-200">
                 Website ini adalah platform yang menyediakan jasa pembuatan website profesional. Kami berkomitmen untuk
                 memberikan solusi terbaik untuk kebutuhan online Anda.
             </p>
 
-            <div class="flex flex-wrap justify-center gap-10">
-                <!-- Developer 1 -->
-                <div
-                    class="w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100">
-                    <div
-                        class="bg-gradient-to-tr from-blue-400 to-blue-200 p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
-                        <img src="{{ asset('img/resya.jpeg') }}" alt="Developer 1"
-                            class="w-48 h-80 object-cover rounded-lg border-4 border-white shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <h2 class="text-xl font-semibold text-center text-blue-700 dark:text-blue-300">Resya Anggara</h2>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Front End Developer</p>
-                </div>
-
-                <!-- Developer 2 -->
-                <div
-                    class="w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100">
-                    <div
-                        class="bg-gradient-to-tr from-pink-400 to-pink-200 p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
-                        <img src="{{ asset('img/firyal.jpg') }}" alt="Developer 2"
-                            class="w-48 h-80 object-cover rounded-lg border-4 border-white shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <h2 class="text-xl font-semibold text-center text-pink-700 dark:text-pink-300">Firyal</h2>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Front End Developer</p>
-                </div>
-
-                <!-- Developer 3 -->
-                <div
-                    class="w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100">
-                    <div
-                        class="bg-gradient-to-tr from-green-400 to-green-200 p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
-                        <img src="{{ asset('img/riffa.jpg') }}" alt="Developer 3"
-                            class="w-48 h-80 object-cover rounded-lg border-4 border-white shadow-lg transition-transform duration-300 group-hover:scale-110">
-                    </div>
-                    <h2 class="text-xl font-semibold text-center text-green-700 dark:text-green-300">Riffa</h2>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Full Stack Developer</p>
-                </div>
-            </div>
+            <!-- Tempat menampilkan card developer -->
+            <div id="developers" class="flex flex-wrap justify-center gap-10"></div>
         </div>
     </section>
 
+    <!-- Script Theme & Developer -->
     <script>
-        // Navbar transparan saat scroll
+        // Navbar scroll effect
         window.addEventListener('scroll', function () {
             const navbar = document.getElementById('main-navbar');
             if (window.scrollY > 10) {
@@ -108,15 +73,9 @@
         const iconMoon = document.getElementById('icon-moon');
         const html = document.documentElement;
 
-        // Atur icon awal (hanya satu yang tampil)
         function updateIcons(isDark) {
-            if (isDark) {
-                iconSun.style.display = 'none';
-                iconMoon.style.display = 'inline';
-            } else {
-                iconSun.style.display = 'inline';
-                iconMoon.style.display = 'none';
-            }
+            iconSun.style.display = isDark ? 'none' : 'inline';
+            iconMoon.style.display = isDark ? 'inline' : 'none';
         }
 
         function setTheme(mode) {
@@ -127,45 +86,67 @@
                 html.classList.remove('dark');
                 updateIcons(false);
             }
-            html.style.display = 'none';
-            void html.offsetHeight;
-            html.style.display = '';
         }
-
 
         function initTheme() {
             const savedTheme = localStorage.getItem('theme');
-            let isDark = false;
-            if (
-                savedTheme === 'dark' ||
-                (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-            ) {
-                setTheme('dark');
-                isDark = true;
-            } else {
-                setTheme('light');
-                isDark = false;
-            }
-            // updateIcons(isDark); // Sudah dipanggil di setTheme
+            let isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            setTheme(isDark ? 'dark' : 'light');
         }
-        // Pastikan icon awal benar
+
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
-            // Pastikan icon sesuai setelah inisialisasi
             updateIcons(html.classList.contains('dark'));
+
+            // Tampilkan data developer dari array
+            const developers = [
+                {
+                    name: "Resya Anggara",
+                    role: "Front End Developer",
+                    image: "{{ asset('img/resya.jpeg') }}",
+                    color: "from-blue-400 to-blue-200",
+                    textColor: "text-blue-700 dark:text-blue-300"
+                },
+                {
+                    name: "Firyal",
+                    role: "Front End Developer",
+                    image: "{{ asset('img/firyal.jpg') }}",
+                    color: "from-pink-400 to-pink-200",
+                    textColor: "text-pink-700 dark:text-pink-300"
+                },
+                {
+                    name: "Riffa",
+                    role: "Full Stack Developer",
+                    image: "{{ asset('img/riffa.jpg') }}",
+                    color: "from-green-400 to-green-200",
+                    textColor: "text-green-700 dark:text-green-300"
+                },
+            ];
+
+            const container = document.getElementById('developers');
+            developers.forEach(dev => {
+                const card = document.createElement('div');
+                card.className = `
+                    w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 
+                    p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100
+                `;
+                card.innerHTML = `
+                    <div class="bg-gradient-to-tr ${dev.color} p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
+                        <img src="${dev.image}" alt="${dev.name}"
+                            class="object-cover w-48 transition-transform duration-300 border-4 border-white rounded-lg shadow-lg h-80 group-hover:scale-110">
+                    </div>
+                    <h2 class="text-xl font-semibold text-center ${dev.textColor}">${dev.name}</h2>
+                    <p class="text-center text-gray-500 dark:text-gray-400">${dev.role}</p>
+                `;
+                container.appendChild(card);
+            });
         });
 
         themeToggle.addEventListener('click', () => {
             const isDark = html.classList.contains('dark');
-            if (isDark) {
-                setTheme('light');
-                localStorage.setItem('theme', 'light');
-            } else {
-                setTheme('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-            // Pastikan icon langsung berubah
-            updateIcons(html.classList.contains('dark'));
+            setTheme(isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            updateIcons(!isDark);
         });
 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -175,7 +156,5 @@
             }
         });
     </script>
-
 </body>
-
 </html>

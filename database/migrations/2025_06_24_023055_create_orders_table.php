@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('website_type');
             $table->text('desired_features');
             $table->text('design_reference')->nullable();
-            $table->decimal('budget', 10, 2);
+            $table->decimal('budget', 15, 2);
             $table->date('deadline');
             $table->enum('status', ['pending', 'in_progress', 'completed'])->default('pending');
             $table->string('additional_file')->nullable();

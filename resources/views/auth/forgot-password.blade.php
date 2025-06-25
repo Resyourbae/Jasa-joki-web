@@ -1,17 +1,15 @@
 <x-guest-layout>
     <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+        <!-- <x-slot name="logo">
+            </x-slot> -->
+        <div class="text-2xl font-bold text-blue-700 tracking-wide select-none dark:text-blue-200 text-center mb-6">
+            AyserNii Joki
         </div>
 
         @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ $value }}
+        </div>
         @endsession
 
         <x-validation-errors class="mb-4" />
@@ -30,5 +28,11 @@
                 </x-button>
             </div>
         </form>
+
+        <div class="mt-6 text-center">
+            <a href="{{ route('login') }}" class="text-sm text-indigo-600 hover:underline dark:text-indigo-400">
+                Kembali ke halaman login
+            </a>
+        </div>
     </x-authentication-card>
 </x-guest-layout>

@@ -67,11 +67,11 @@
                     class="w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100">
                     <div
                         class="bg-gradient-to-tr from-pink-400 to-pink-200 p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
-                        <img src="https://via.placeholder.com/150" alt="Developer 2"
+                        <img src="{{ asset('img/firyal.jpg') }}" alt="Developer 2"
                             class="w-48 h-80 object-cover rounded-lg border-4 border-white shadow-lg transition-transform duration-300 group-hover:scale-110">
                     </div>
-                    <h2 class="text-xl font-semibold text-center text-pink-700 dark:text-pink-300">Nama Developer 2</h2>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Posisi</p>
+                    <h2 class="text-xl font-semibold text-center text-pink-700 dark:text-pink-300">Firyal</h2>
+                    <p class="text-gray-500 text-center dark:text-gray-400">Front End Developer</p>
                 </div>
 
                 <!-- Developer 3 -->
@@ -79,12 +79,11 @@
                     class="w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100">
                     <div
                         class="bg-gradient-to-tr from-green-400 to-green-200 p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
-                        <img src="https://via.placeholder.com/150" alt="Developer 3"
+                        <img src="{{ asset('img/riffa.jpg') }}" alt="Developer 3"
                             class="w-48 h-80 object-cover rounded-lg border-4 border-white shadow-lg transition-transform duration-300 group-hover:scale-110">
                     </div>
-                    <h2 class="text-xl font-semibold text-center text-green-700 dark:text-green-300">Nama Developer 3
-                    </h2>
-                    <p class="text-gray-500 text-center dark:text-gray-400">Posisi</p>
+                    <h2 class="text-xl font-semibold text-center text-green-700 dark:text-green-300">Riffa</h2>
+                    <p class="text-gray-500 text-center dark:text-gray-400">Full Stack Developer</p>
                 </div>
             </div>
         </div>

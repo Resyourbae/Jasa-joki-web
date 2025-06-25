@@ -1,9 +1,8 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+<div class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white via-gray-100 to-gray-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 py-8 px-4">
     <div>
         {{ $logo }}
     </div>
-
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 dark:bg-gray-900 dark:shadow-black">
         {{ $slot }}
     </div>
 </div>

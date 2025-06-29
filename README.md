@@ -79,6 +79,10 @@ Jasa Joki Web adalah platform online yang menyediakan layanan pembuatan website,
    ```bash
    php artisan serve
    ```
+   atau
+    ```bash
+   composer run dev
+   ```
 
    Website akan dapat diakses di `http://localhost:8000`
 
@@ -207,11 +211,11 @@ Project ini dilisensikan di bawah [MIT License](LICENSE).
 
 - [x] Setup project dasar
 - [x] Implementasi authentication
-- [ ] Sistem pemesanan
+- [x] Sistem pemesanan
 - [ ] Payment gateway integration
-- [ ] Dashboard admin
+- [x] Dashboard admin
 - [ ] Sistem tracking progress
-- [ ] Mobile responsive optimization
+- [x] Mobile responsive optimization
 - [ ] SEO optimization
 - [ ] Testing & deployment
 

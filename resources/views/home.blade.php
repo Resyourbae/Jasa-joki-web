@@ -10,15 +10,17 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-[#1b1b18] min-h-screen flex flex-col 
+<body class="bg-gradient-to-br from-blue-50 via-white to-blue-100 text-[#1b1b18] min-h-screen flex flex-col
              dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 dark:text-gray-100">
 
     <!-- Navbar Fixed -->
     <nav id="main-navbar"
-        class="top-0 right-0 p-4 flex items-center justify-between bg-white shadow-lg fixed w-full z-50 rounded-b-lg transition-colors duration-300 dark:bg-gray-900 dark:shadow-gray-800">
-        <div class="text-lg font-bold text-blue-700 tracking-wide select-none dark:text-blue-200">AyserNii Joki</div>
-        <div class="flex gap-4 items-center">
-            <button id="theme-toggle" class="p-2 rounded-full hover:bg-blue-100 transition dark:hover:bg-gray-800"
+        class="fixed top-0 right-0 z-50 flex items-center justify-between w-full p-4 transition-colors duration-300 bg-white rounded-b-lg shadow-lg dark:bg-gray-900 dark:shadow-gray-800">
+        <div class="text-lg font-bold tracking-wide text-blue-700 select-none dark:text-blue-200">
+            <a href="/">AyserNii Joki</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 transition rounded-full hover:bg-blue-100 dark:hover:bg-gray-800"
                 aria-label="Toggle Theme" type="button">
                 <svg id="icon-sun" class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24">
@@ -40,86 +42,86 @@
 
     <!-- Hero Section -->
     <section
-        class="relative pt-28 pb-14 overflow-hidden mb-12 dark:bg-gradient-to-r dark:from-gray-900 dark:to-gray-800">
+        class="relative mb-12 overflow-hidden pt-28 pb-14 dark:bg-gradient-to-r dark:from-gray-900 dark:to-gray-800">
         <div
-            class="absolute inset-0 bg-gradient-to-r from-blue-700/80 to-blue-900/70 z-10 dark:from-gray-900/90 dark:to-gray-800/80">
+            class="absolute inset-0 z-10 bg-gradient-to-r from-blue-700/80 to-blue-900/70 dark:from-gray-900/90 dark:to-gray-800/80">
         </div>
-        <div class="absolute right-0 top-0 h-full w-1/2 hidden md:block">
+        <div class="absolute top-0 right-0 hidden w-1/2 h-full md:block">
             <img src="{{ asset('img/koputer.jpg') }}" alt="Web Illustration"
-                class="h-full w-full object-cover object-center shadow-2xl brightness-110 contrast-110 saturate-125 dark:brightness-75 dark:contrast-90" />
+                class="object-cover object-center w-full h-full shadow-2xl brightness-110 contrast-110 saturate-125 dark:brightness-75 dark:contrast-90" />
         </div>
-        <div class="container mx-auto px-4 relative z-20">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="container relative z-20 px-4 mx-auto">
+            <div class="grid items-center gap-8 md:grid-cols-2">
                 <div
-                    class="text-white py-8 md:py-16 flex flex-col items-center md:items-start text-center md:text-left">
+                    class="flex flex-col items-center py-8 text-center text-white md:py-16 md:items-start md:text-left">
                     <h1
-                        class="text-4xl font-extrabold mb-3 leading-tight drop-shadow text-gray-100 dark:text-yellow-300">
+                        class="mb-3 text-4xl font-extrabold leading-tight text-gray-100 drop-shadow dark:text-yellow-300">
                         Selamat Datang di
                         <span>Jasa Joki Bikin Web</span>
                     </h1>
-                    <p class="text-lg md:text-xl mb-8 text-blue-100 max-w-lg dark:text-gray-200">
+                    <p class="max-w-lg mb-8 text-lg text-blue-100 md:text-xl dark:text-gray-200">
                         Kami siap bantu kamu bikin website Tingkat menengah dengan cepat, dan sesuai kebutuhan! Kalau
                         anda berminat silahkan login terlebih dahulu untuk melanjutkan pemesanan!😊
                     </p>
-                    <a href="/dev"
-                        class="inline-block bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors duration-300 shadow-lg hover:shadow-xl dark:bg-gray-200 dark:text-yellow-500 dark:hover:bg-gray-800">
+                    <a href="#tentang-kami"
+                        class="inline-block px-8 py-3 font-semibold text-blue-700 transition-colors duration-300 bg-white rounded-full shadow-lg hover:bg-blue-50 hover:shadow-xl dark:bg-gray-200 dark:text-yellow-500 dark:hover:bg-gray-800">
                         Tentang Kami
                     </a>
                 </div>
                 <div class="block md:hidden">
                     <img src="{{ asset('img/koputer.jpg') }}" alt="Web Illustration"
-                        class="w-full rounded-xl shadow-xl border border-blue-100 object-cover brightness-110 contrast-110 saturate-125 dark:brightness-75 dark:contrast-90" />
+                        class="object-cover w-full border border-blue-100 shadow-xl rounded-xl brightness-110 contrast-110 saturate-125 dark:brightness-75 dark:contrast-90" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="text-center max-w-2xl mx-auto px-4 flex-1 w-full">
+    <main class="flex-1 w-full max-w-2xl px-4 mx-auto text-center">
         <!-- Fitur Layanan -->
         <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-5 flex items-center justify-center gap-2 dark:text-yellow-300">
+            <h2 class="flex items-center justify-center gap-2 mb-5 text-2xl font-semibold dark:text-yellow-300">
                 <span class="text-blue-600 dark:text-yellow-300">🛠️</span> Layanan Kami
             </h2>
-            <ul class="list-none grid grid-cols-1 sm:grid-cols-2 gap-5 mx-auto max-w-md">
+            <ul class="grid max-w-md grid-cols-1 gap-5 mx-auto list-none sm:grid-cols-2">
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-4 shadow hover:shadow-lg transition hover:-translate-y-1 relative flex items-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="relative flex items-center p-4 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span
                         class="absolute top-2 right-2 bg-blue-200 text-blue-800 text-xs px-2 py-0.5 rounded-full font-semibold dark:bg-blue-400 dark:text-blue-900">Favorit</span>
                     <span class="font-medium">Pembuatan website company profile</span>
                 </li>
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-5 shadow hover:shadow-lg transition hover:-translate-y-1 relative flex items-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="relative flex items-center p-5 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span
                         class="absolute top-2 right-2 bg-yellow-300 text-yellow-800 text-xs px-2 py-0.5 rounded-full font-semibold dark:bg-yellow-900 dark:text-yellow-200">Mid</span>
                     <span class="font-medium">CRUD simpel (To Do List dan lain lain)</span>
                 </li>
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-5 shadow hover:shadow-lg transition hover:-translate-y-1 relative flex items-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="relative flex items-center p-5 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span
                         class="absolute top-2 right-2 bg-yellow-300 text-yellow-800 text-xs px-2 py-0.5 rounded-full font-semibold dark:bg-yellow-900 dark:text-yellow-200">Mid</span>
                     <span class="font-medium">Dashboard Admin & CRM</span>
                 </li>
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-5 shadow hover:shadow-lg transition hover:-translate-y-1 relative flex items-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="relative flex items-center p-5 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span
                         class="absolute top-2 right-2 bg-yellow-300 text-yellow-800 text-xs px-2 py-0.5 rounded-full font-semibold dark:bg-yellow-900 dark:text-yellow-200">Mid</span>
                     <span class="font-medium">Landing page promosi produk</span>
                 </li>
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-5 shadow hover:shadow-lg transition hover:-translate-y-1 relative flex items-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="relative flex items-center p-5 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span
                         class="absolute top-2 right-2 bg-yellow-300 text-yellow-800 text-xs px-2 py-0.5 rounded-full font-semibold dark:bg-yellow-900 dark:text-yellow-200">Mid</span>
                     <span class="font-medium">Sistem Absensi Simpel</span>
                 </li>
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-5 shadow hover:shadow-lg transition hover:-translate-y-1 relative flex items-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="relative flex items-center p-5 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span
                         class="absolute top-2 right-2 bg-green-300 text-green-800 text-xs px-2 py-0.5 rounded-full font-semibold dark:bg-green-900 dark:text-green-200">Rere</span>
                     <span class="font-medium">Project Tugas Sekolah</span>
                 </li>
                 <li
-                    class="bg-white border border-blue-100 rounded-lg p-4 shadow hover:shadow-lg transition hover:-translate-y-1 col-span-1 sm:col-span-2 flex items-center justify-center dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
+                    class="flex items-center justify-center col-span-1 p-4 transition bg-white border border-blue-100 rounded-lg shadow hover:shadow-lg hover:-translate-y-1 sm:col-span-2 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100">
                     <span class="font-medium">Full support & revisi ringan gratis</span>
                 </li>
             </ul>
@@ -127,46 +129,36 @@
 
         <!-- Kenapa Pilih Kami -->
         <section class="mb-12">
-            <h2 class="text-2xl font-semibold mb-5 flex items-center justify-center gap-2 dark:text-yellow-300">
+            <h2 class="flex items-center justify-center gap-2 mb-5 text-2xl font-semibold dark:text-yellow-300">
                 <span class="text-yellow-500 dark:text-yellow-300">✨</span> Kenapa Harus Kami?
             </h2>
             <div
-                class="bg-yellow-50 border border-yellow-100 rounded-lg p-6 shadow text-base text-yellow-900 dark:bg-gray-900 dark:border-gray-700 dark:text-yellow-200">
+                class="p-6 text-base text-yellow-900 border border-yellow-100 rounded-lg shadow bg-yellow-50 dark:bg-gray-900 dark:border-gray-700 dark:text-yellow-200">
                 Tim kami berpengalaman dengan teknologi terbaru seperti
                 <span class="font-semibold text-blue-700 dark:text-yellow-300">Laravel</span>,
                 <span class="font-semibold text-blue-700 dark:text-yellow-300">React</span>,
                 <span class="font-semibold text-blue-700 dark:text-yellow-300">Tailwind</span>, dan
                 <span class="font-semibold text-blue-700 dark:text-yellow-300">Livewire</span>.<br />
                 <span
-                    class="inline-block mt-2 bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-semibold dark:bg-yellow-900 dark:text-yellow-200">Proses
+                    class="inline-block px-2 py-1 mt-2 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full dark:bg-yellow-900 dark:text-yellow-200">Proses
                     cepat</span>
                 <span
-                    class="inline-block mt-2 bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold dark:bg-green-900 dark:text-green-200">Harga
+                    class="inline-block px-2 py-1 mt-2 text-xs font-semibold text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-200">Harga
                     terjangkau</span>
                 <span
-                    class="inline-block mt-2 bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold dark:bg-purple-900 dark:text-purple-200">Hasil
+                    class="inline-block px-2 py-1 mt-2 text-xs font-semibold text-purple-800 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-200">Hasil
                     maksimal</span>
             </div>
         </section>
+    </main>
+@include('dev')
 
-         <!-- Hero Section -->
-    <section id="hero"
-        class="min-h-screen py-16 pt-24 bg-gradient-to-b from-white to-gray-100 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800">
-        <div class="container px-4 mx-auto">
-            <h1 class="mb-4 text-4xl font-extrabold text-center text-blue-800 drop-shadow-lg dark:text-blue-200">Tentang Website Kami</h1>
-            <p class="max-w-2xl mx-auto mb-12 text-lg text-center text-gray-700 dark:text-gray-200">
-                Website ini adalah platform yang menyediakan jasa pembuatan website profesional. Kami berkomitmen untuk
-                memberikan solusi terbaik untuk kebutuhan online Anda.
-            </p>
 
-            <!-- Tempat menampilkan card developer -->
-            <div id="developers" class="flex flex-wrap justify-center gap-10"></div>
-        </div>
-    </section>
-
+    <!-- Main Content Lanjutan -->
+    <div class="flex-1 w-full max-w-2xl px-4 mx-auto text-center">
         <!-- Kontak -->
-        <section class="mb-10">
-            <h2 class="text-2xl font-semibold mb-5 flex items-center justify-center gap-2 dark:text-yellow-300">
+        <section class="mt-12 mb-10">
+            <h2 class="flex items-center justify-center gap-2 mb-5 text-2xl font-semibold dark:text-yellow-300">
                 <span class="text-green-600 dark:text-yellow-300">📞</span> Hubungi Kami
             </h2>
             <div class="flex flex-col items-center gap-3 text-base">
@@ -176,7 +168,7 @@
                         <path d="M16 12a4 4 0 01-8 0 4 4 0 018 0z" />
                         <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
                     </svg>
-                    Email: <a href="mailto:jokibikinweb@example.com"
+                    Email: <a href="mailto:resyaanggara98@gmail.com"
                         class="text-blue-700 hover:underline dark:text-yellow-300">resyaanggara98@gmail.com</a>
                 </p>
                 <p class="flex items-center gap-2">
@@ -200,11 +192,11 @@
                 </p>
             </div>
         </section>
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer
-        class="w-full text-center py-4 mt-auto text-sm text-gray-500 bg-white border-t border-blue-100 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700">
+        class="w-full py-4 mt-auto text-sm text-center text-gray-500 bg-white border-t border-blue-100 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700">
         &copy; {{ date('Y') }} Jasa Joki Bikin Web. All rights reserved. V1.0.0
     </footer>
 
@@ -251,7 +243,6 @@
             html.style.display = '';
         }
 
-
         function initTheme() {
             const savedTheme = localStorage.getItem('theme');
             let isDark = false;
@@ -265,56 +256,13 @@
                 setTheme('light');
                 isDark = false;
             }
-            // updateIcons(isDark); // Sudah dipanggil di setTheme
         }
+
         // Pastikan icon awal benar
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
             // Pastikan icon sesuai setelah inisialisasi
             updateIcons(html.classList.contains('dark'));
-
-             // Tampilkan data developer dari array
-            const developers = [
-                {
-                    name: "Resya Anggara",
-                    role: "Front End Developer",
-                    image: "{{ asset('img/resya.jpeg') }}",
-                    color: "from-blue-400 to-blue-200",
-                    textColor: "text-blue-700 dark:text-blue-300"
-                },
-                {
-                    name: "Firyal",
-                    role: "Front End Developer",
-                    image: "{{ asset('img/firyal.jpg') }}",
-                    color: "from-pink-400 to-pink-200",
-                    textColor: "text-pink-700 dark:text-pink-300"
-                },
-                {
-                    name: "Riffa",
-                    role: "Full Stack Developer",
-                    image: "{{ asset('img/riffa.jpg') }}",
-                    color: "from-green-400 to-green-200",
-                    textColor: "text-green-700 dark:text-green-300"
-                },
-            ];
-
-            const container = document.getElementById('developers');
-            developers.forEach(dev => {
-                const card = document.createElement('div');
-                card.className = `
-                    w-80 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 
-                    p-6 flex flex-col items-center group dark:bg-gray-800 dark:text-gray-100
-                `;
-                card.innerHTML = `
-                    <div class="bg-gradient-to-tr ${dev.color} p-0.5 rounded-lg mb-4 transition-transform duration-300 group-hover:scale-105">
-                        <img src="${dev.image}" alt="${dev.name}"
-                            class="object-cover w-48 transition-transform duration-300 border-4 border-white rounded-lg shadow-lg h-80 group-hover:scale-110">
-                    </div>
-                    <h2 class="text-xl font-semibold text-center ${dev.textColor}">${dev.name}</h2>
-                    <p class="text-center text-gray-500 dark:text-gray-400">${dev.role}</p>
-                `;
-                container.appendChild(card);
-            });
         });
 
         themeToggle.addEventListener('click', () => {
@@ -326,7 +274,7 @@
                 setTheme('dark');
                 localStorage.setItem('theme', 'dark');
             }
-            // Pastikan icon langsung berubah
+         
             updateIcons(html.classList.contains('dark'));
         });
 
@@ -335,6 +283,20 @@
                 setTheme(e.matches ? 'dark' : 'light');
                 updateIcons(e.matches);
             }
+        });
+
+        // Smooth scroll untuk anchor link
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>

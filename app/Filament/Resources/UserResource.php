@@ -23,15 +23,41 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')->required(),
+                Forms\Components\TextInput::make('email')->email()->required(),
+                Forms\Components\TextInput::make('password')
+                    ->password()
+                    ->dehydrateStateUsing(fn($state) => !empty($state) ? bcrypt($state) : null)
+                    ->required(fn($livewire) => $livewire instanceof \Filament\Resources\Pages\CreateRecord),
             ]);
+    }
+
+    public static function mutateFormDataBeforeCreate(array $data): array
+    {
+        if (!empty($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
+        }
+        return $data;
+    }
+
+    public static function mutateFormDataBeforeSave(array $data): array
+    {
+        if (isset($data['password']) && $data['password'] === null) {
+            unset($data['password']);
+        } elseif (!empty($data['password'])) {
+            $data['password'] = bcrypt($data['password']);
+        }
+        return $data;
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->sortable(),
+                Tables\Columns\TextColumn::make('name')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('email')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('created_at')->dateTime('d M Y H:i')->sortable(),
             ])
             ->filters([
                 //

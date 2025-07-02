@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('service_packages', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_paket');
+            $table->integer('harga');
+            $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
     }

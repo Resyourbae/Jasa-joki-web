@@ -24,6 +24,14 @@ class OrderResource extends Resource
         return $form
             ->schema([
                 // ...existing code...
+                Forms\Components\Select::make('status')
+                    ->label('Status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'in_progress' => 'Diproses',
+                        'completed' => 'Selesai',
+                    ])
+                    ->required(),
             ]);
     }
 
@@ -39,8 +47,8 @@ class OrderResource extends Resource
                     ->badge()
                     ->color(fn($state) => match ($state) {
                         'pending' => 'warning',
-                        'proses' => 'info',
-                        'selesai' => 'success',
+                        'in_progress' => 'info',
+                        'completed' => 'success',
                         default => 'secondary',
                     }),
                 TextColumn::make('created_at')
@@ -51,20 +59,25 @@ class OrderResource extends Resource
                 SelectFilter::make('status')
                     ->options([
                         'pending' => 'Pending',
-                        'proses' => 'Proses',
-                        'selesai' => 'Selesai',
+                        'in_progress' => 'Diproses',
+                        'completed' => 'Selesai',
                     ]),
             ])
             ->actions([
-                // ...existing code...
-                Action::make('ubahStatus')
+                Tables\Actions\Action::make('ubahStatus')
                     ->label('Ubah Status')
-                    ->action(function ($record) {
-                        if ($record->status === 'pending') {
-                            $record->status = 'proses';
-                        } elseif ($record->status === 'proses') {
-                            $record->status = 'selesai';
-                        }
+                    ->form([
+                        Forms\Components\Select::make('status')
+                            ->label('Status')
+                            ->options([
+                                'pending' => 'Pending',
+                                'in_progress' => 'Diproses',
+                                'completed' => 'Selesai',
+                            ])
+                            ->required(),
+                    ])
+                    ->action(function ($record, array $data) {
+                        $record->status = $data['status'];
                         $record->save();
                     }),
             ]);

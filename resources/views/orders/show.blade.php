@@ -10,6 +10,29 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                            Detail Pesanan
+                            <span
+                                class="ml-2 text-base font-normal text-gray-400 dark:text-gray-500">#{{ $order->id }}</span>
+                        </h2>
+                        @if($order->status === 'pending')
+                            <form action="{{ route('orders.destroy', $order) }}" method="POST" class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    class="inline-flex items-center gap-1 px-3 py-1.5 border border-red-500 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900 hover:text-red-900 dark:hover:text-red-300 font-semibold rounded-md transition text-sm"
+                                    onclick="return confirm('Yakin ingin menghapus pesanan ini?')">
+                                    <svg xmlns='http://www.w3.org/2000/svg' class='h-4 w-4' fill='none' viewBox='0 0 24 24'
+                                        stroke='currentColor'>
+                                        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
+                                            d='M6 18L18 6M6 6l12 12' />
+                                    </svg>
+                                    Hapus
+                                </button>
+                            </form>
+                        @endif
+                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mb-4">Informasi Pesanan</h3>
@@ -94,18 +117,23 @@
                         </a>
                     </div>
 
-                    <div class="mt-8 flex justify-between">
+                    <div class="mt-8 flex flex-col md:flex-row md:justify-between items-start md:items-center gap-4">
                         <a href="{{ route('orders.index') }}"
                             class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">
                             ← Kembali ke Daftar Pesanan
                         </a>
                         @if($order->status === 'pending')
-                            <form action="{{ route('orders.destroy', $order) }}" method="POST" class="inline">
+                            <form action="{{ route('orders.destroy', $order) }}" method="POST" class="inline md:hidden">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit"
-                                    class="text-red-600 dark:text-red-400 hover:text-red-900 dark:hover:text-red-300"
+                                    class="inline-flex items-center gap-1 px-4 py-2 border border-red-500 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900 hover:text-red-900 dark:hover:text-red-300 font-semibold rounded-md transition"
                                     onclick="return confirm('Yakin ingin menghapus pesanan ini?')">
+                                    <svg xmlns='http://www.w3.org/2000/svg' class='h-5 w-5' fill='none' viewBox='0 0 24 24'
+                                        stroke='currentColor'>
+                                        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2'
+                                            d='M6 18L18 6M6 6l12 12' />
+                                    </svg>
                                     Hapus Pesanan
                                 </button>
                             </form>
